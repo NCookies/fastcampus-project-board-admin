@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.Collection;
 import java.util.LinkedHashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -63,7 +64,7 @@ public class UserAccount extends AuditingFields {
         this.roleTypes.add(roleType);
     }
 
-    public void addRoleTypes(Set<RoleType> roleTypes) {
+    public void addRoleTypes(Collection<RoleType> roleTypes) {
         this.roleTypes.addAll(roleTypes);
     }
 
