@@ -1,5 +1,6 @@
 package com.fastcampus.projectboardadmin.controller;
 
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
@@ -14,9 +15,11 @@ public class AdminUserAccountController {
 
     @GetMapping
     public String members(
+            HttpServletRequest request,
             @PageableDefault(size = 10, sort = "createdAt", direction = Sort.Direction.DESC) Pageable pageable,
             Model model
     ) {
+        model.addAttribute("request", request);
         return "admin/members";
     }
 
