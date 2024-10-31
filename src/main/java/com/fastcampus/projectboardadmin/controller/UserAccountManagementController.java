@@ -20,7 +20,7 @@ public class UserAccountManagementController {
             Model model
     ) {
         model.addAttribute("request", request);
-        return "management/userAccounts";
+        return "management/user-accounts";
     }
 
 }
