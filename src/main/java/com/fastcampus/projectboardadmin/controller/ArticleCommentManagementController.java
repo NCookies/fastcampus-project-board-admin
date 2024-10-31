@@ -20,7 +20,7 @@ public class ArticleCommentManagementController {
             Model model
     ) {
         model.addAttribute("request", request);
-        return "management/articleComments";
+        return "management/article-comments";
     }
 
 }
