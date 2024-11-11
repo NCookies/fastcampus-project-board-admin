@@ -14,6 +14,8 @@ public class AdminAccountController {
 
     @GetMapping
     public String members(Model model) {
+    private final AdminAccountService adminAccountService;
+    @GetMapping("/admin/members")
         return "admin/members";
     }
 
