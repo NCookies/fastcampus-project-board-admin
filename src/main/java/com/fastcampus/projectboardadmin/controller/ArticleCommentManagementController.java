@@ -16,8 +16,7 @@ public class ArticleCommentManagementController {
     private final ArticleCommentManagementService articleCommentManagementService;
 
     @GetMapping
-    public String articleComments(HttpServletRequest request, Model model) {
-        model.addAttribute("request", request);
+    public String articleComments(Model model) {
         model.addAttribute(
                 "comments",
                 articleCommentManagementService.getArticleComments().stream().map(ArticleCommentResponse::of).toList()

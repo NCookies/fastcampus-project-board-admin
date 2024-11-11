@@ -19,9 +19,7 @@ public class AdminAccountController {
     private final AdminAccountService adminAccountService;
 
     @GetMapping("/admin/members")
-    public String members(HttpServletRequest request, Model model) {
-        model.addAttribute("request", request);
-
+    public String members() {
         return "admin/members";
     }
 

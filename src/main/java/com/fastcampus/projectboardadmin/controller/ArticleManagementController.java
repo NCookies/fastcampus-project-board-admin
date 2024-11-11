@@ -16,8 +16,7 @@ public class ArticleManagementController {
     private final ArticleManagementService articleManagementService;
 
     @GetMapping
-    public String articles(HttpServletRequest request, Model model) {
-        model.addAttribute("request", request);
+    public String articles(Model model) {
         model.addAttribute(
                 "articles",
                 articleManagementService.getArticles().stream().map(ArticleResponse::withoutContent).toList()

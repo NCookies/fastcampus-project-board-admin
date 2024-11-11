@@ -16,8 +16,7 @@ public class UserAccountManagementController {
     private final UserAccountManagementService userAccountManagementService;
 
     @GetMapping
-    public String userAccounts(HttpServletRequest request, Model model) {
-        model.addAttribute("request", request);
+    public String userAccounts(Model model) {
         model.addAttribute(
                 "userAccounts",
                 userAccountManagementService.getUserAccounts().stream().map(UserAccountResponse::from).toList()
