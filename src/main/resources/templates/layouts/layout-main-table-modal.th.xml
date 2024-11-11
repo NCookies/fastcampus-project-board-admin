@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<thlogic>
+    <attr sel=".modal-body/pre" th:style="'white-space: pre-line'" />
+
+    <!-- hidden input 태그에 csrf 토큰값이 들어간다.  -->
+    <!-- @EnableWebSecurity 어노테이션과 함께 사용해야 에러가 발생하지 않는다. -->
+    <attr sel=".modal-footer/form" th:method="post" />
+    <attr sel=".hidden-input" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+</thlogic>
