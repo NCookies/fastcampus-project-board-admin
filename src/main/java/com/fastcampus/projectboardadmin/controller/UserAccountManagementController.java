@@ -2,6 +2,7 @@ package com.fastcampus.projectboardadmin.controller;
 
 import com.fastcampus.projectboardadmin.dto.response.UserAccountResponse;
 import com.fastcampus.projectboardadmin.service.UserAccountManagementService;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,7 +16,8 @@ public class UserAccountManagementController {
     private final UserAccountManagementService userAccountManagementService;
 
     @GetMapping
-    public String userAccounts(Model model) {
+    public String userAccounts(HttpServletRequest request, Model model) {
+        model.addAttribute("request", request);
         model.addAttribute(
                 "userAccounts",
                 userAccountManagementService.getUserAccounts().stream().map(UserAccountResponse::from).toList()
